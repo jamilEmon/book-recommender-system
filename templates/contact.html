@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color:black; color:white">
+
+    {% include 'navbar.html' %}
+
+    <div class="container" style="margin-top:50px">
+        <h2>📩 Contact Us</h2>
+        <p>If you have any questions, suggestions, or issues, feel free to reach out:</p>
+        
+        <h4>Email: <a href="mailto:jamiltxg@gmail.com" style="color:#00a65a">jamiltxg@gmail.com</a></h4>
+
+        <form action="mailto:jamiltxg@gmail.com" method="post" enctype="text/plain" style="margin-top:20px">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea class="form-control" name="message" rows="4" placeholder="Type your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Send Email</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.text-white {
+    color: white;
+}
+.card img {
+    height: 200px;
+    width: 150px;
+    margin-bottom: 10px;
+}

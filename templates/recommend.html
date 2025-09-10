@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommend Books</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color:black">
+
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h2 class="text-white" style="margin-top:20px">🔍 Enter a Book Name</h2>
+        <form action="/recommend_books" method="post">
+            <input type="text" name="user_input" class="form-control" placeholder="Type a book title...">
+            <button type="submit" class="btn btn-success" style="margin-top:10px">Recommend</button>
+        </form>
+
+        {% if message %}
+            <h4 class="text-danger">{{ message }}</h4>
+        {% endif %}
+
+        <div class="row">
+            {% for book in data %}
+                <div class="col-md-3" style="margin-top:30px">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{ book[2] }}">
+                            <p class="text-white">{{ book[0] }}</p>
+                            <h4 class="text-white">{{ book[1] }}</h4>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
